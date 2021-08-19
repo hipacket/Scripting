@@ -1,11 +1,18 @@
 var obj = JSON.parse($response.body);
 
-if(obj.length && obj[0].value) {
-  if(obj[0].value.id) {
-    obj[0].value.isFree = true;
-  } else if(obj[0].value.data && obj[0].value.data.length) {
-    obj[0].value.data.forEach(book => {
-      book.isFree = true;
+if(obj.length) {
+  var book = obj.find(function(o) {
+    return o.value.id;
+  });
+  var data = obj.find(function(o) {
+    return o.value.data && o.value.data.length;
+  });;
+  if(book) {
+    book.isFree = true;
+    book.whyItFree = 'Fonos quyết định dành tặng các thính giả hoàn toàn miễn phí.';
+  } else if(data) {
+    data.forEach(function(b) {
+      b.isFree = true;
     });
   }
 }
