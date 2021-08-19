@@ -10,4 +10,4 @@ if(obj.length && obj[0].value) {
   }
 }
 
-$done({status: 200, body: JSON.stringify(obj)});
+$done({body: JSON.stringify(obj)});
