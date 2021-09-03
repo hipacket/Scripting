@@ -1,5 +1,6 @@
 var obj = JSON.parse($response.body);
 
+
 obj["subscription"]= {
   "in_free_trial_window": true,
   "subscription_plan": "com.calm.yearly.trial.one_week.usd_50",
