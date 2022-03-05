@@ -14,20 +14,21 @@ var obj = JSON.parse($response.body);
 // 	"state": "active"
 // }];3369406
 
-
-obj.info.cohort = "37";
-obj.info.subscriptions = [{
-  "id": 805063,
-  "status": "active",
-  "in_grace_period": false,
-  "product": "unlimited",
-  "platform": "apple",
-  "starts_at": 1646452089,
-  "ends_at": 4099821292,
-  "plan_id": "s1m.t7d.p8.v1",
-  "duration_unit": "months",
-  "duration_value": 1,
-  "auto_renew_status": true
-}];
+if(obj.info) {
+  obj.info.cohort = "37";
+  obj.info.subscriptions = [{
+    "id": 805063,
+    "status": "active",
+    "in_grace_period": false,
+    "product": "unlimited",
+    "platform": "apple",
+    "starts_at": 1646452089,
+    "ends_at": 4099821292,
+    "plan_id": "s1m.t7d.p8.v1",
+    "duration_unit": "months",
+    "duration_value": 1,
+    "auto_renew_status": true
+  }];
+}
 
 $done({body: JSON.stringify(obj)});
