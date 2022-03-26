@@ -13,6 +13,6 @@ $done({body: JSON.stringify([{
 	"plan": "fe",
 	"status": "active",
 	"has_expiration": false,
-	"expires_ms": 4071200107,
+	"expires_ms": 4071200107000,
 	"expires_formatted": "2099-01-04T08:55:07.000Z"
 }])});
