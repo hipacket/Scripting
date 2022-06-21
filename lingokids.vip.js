@@ -15,7 +15,7 @@ var obj = JSON.parse($response.body);
 // }];3369406
 
 if(obj.info) {
-  obj.info.cohort = "37";
+  obj.info.customer = true;
   obj.info.subscriptions = [{
     "id": 805063,
     "status": "active",
