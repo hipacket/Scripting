@@ -11,7 +11,7 @@ if(obj.data.contents.length) {
 			"crossword": "N",
 			"translate": "N",
 			"starwords": "N",
-			"ebook": "N"
+			"ebook": "F"
 		};
 	}
 }
