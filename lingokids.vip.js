@@ -32,7 +32,12 @@ if(obj.info) {
 } else if(obj.feeds) {
   for(var feed of obj.feeds) {
     for(var entrie of feed.entries) {
-      if(entrie.overlay) delete entrie.overlay;
+      if(entrie.overlay) {
+        if(entrie.overlay.action === 'show_locked_modal') 
+          delete entrie.overlay;
+        else 
+          entrie.overlay.blocking = false;
+      }
     }
   }
 }
