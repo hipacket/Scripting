@@ -29,6 +29,12 @@ if(obj.info) {
     "duration_value": 1,
     "auto_renew_status": true
   }];
+} else if(obj.feeds) {
+  for(var feed of obj.feeds) {
+    for(var entrie of feed.entries) {
+      if(entrie.overlay) delete entrie.overlay;
+    }
+  }
 }
 
 $done({body: JSON.stringify(obj)});
