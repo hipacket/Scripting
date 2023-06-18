@@ -2,12 +2,12 @@ var obj = JSON.parse($response.body);
 if(obj.data.contents.length) {
 	for(let i = 0; i < obj.data.contents.length; i++) {
     obj.data.contents[i].service_info = {
+			...obj.data.contents[i].service_info,
       "service": "F",
 			"story": "F",
 			"original_text": "F",
       "sentence": "F",
-      "ebook": "F",
-      ...obj.data.contents[i].service_info
+      "ebook": "F"
     };
 		// obj.data.contents[i].service_info = {
 		// 	"service": "F",
