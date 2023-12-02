@@ -33,7 +33,7 @@ if(obj.info) {
   for(var feed of obj.feeds) {
     for(var entrie of feed.entries) {
       if(entrie.overlay) {
-        if(entrie.overlay.action === 'show_locked_modal') 
+        if(entrie.overlay.blocking) 
           delete entrie.overlay;
         else 
           entrie.overlay.blocking = false;
