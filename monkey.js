@@ -17,11 +17,11 @@ var obj = JSON.parse($response.body);
 // };
 // obj.data.userInfo.time_expired = 4070908800;
 // obj.data.userInfo.is_trial = 0;
-for(var p of obj.data.purchased) {
-	p.is_purchased = true;
-	p.is_active = true;
-	p.time_expire = 0;
-	p.free_days = 365;
-	p.is_free = false;
+for(var key of Object.keys(obj.data.purchased)) {
+	obj.data.purchased[key].is_purchased = true;
+	obj.data.purchased[key].is_active = true;
+	obj.data.purchased[key].time_expire = 0;
+	obj.data.purchased[key].free_days = 365;
+	obj.data.purchased[key].is_free = false;
 }
 $done({body: JSON.stringify(obj)});
