@@ -1,4 +1,7 @@
-var obj = JSON.parse($response.body || '{}');
+var obj = null;
+try {
+  obj = JSON.parse($response.body);
+} catch(e) {}
 
 // obj["info"]["subscriptions"]= [{
 // 	"status": "active",
