@@ -33,7 +33,7 @@ try {
 //     "auto_renew_status": true
 //   }];
 // } else 
-if(obj.feeds) {
+if(obj && obj.feeds) {
   for(var feed of obj.feeds) {
     for(var entrie of feed.entries) {
       if(entrie.overlay) {
@@ -45,7 +45,7 @@ if(obj.feeds) {
     }
   }
 }
-if(obj.info) {
+if(obj && obj.info) {
   obj.info.customer = true;
   if(obj.info.subscriptions) {
     obj.info.subscriptions = [{
