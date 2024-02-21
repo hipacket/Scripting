@@ -17,11 +17,19 @@ var obj = JSON.parse($response.body);
 // };
 // obj.data.userInfo.time_expired = 4070908800;
 // obj.data.userInfo.is_trial = 0;
-for(var key of Object.keys(obj.data.purchased)) {
-	obj.data.purchased[key].is_purchased = true;
-	obj.data.purchased[key].is_active = true;
-	obj.data.purchased[key].time_expire = 0;
-	obj.data.purchased[key].free_days = 365;
-	obj.data.purchased[key].is_free = false;
+if(obj.data.purchased && obj.data.purchased.is_purchased) {
+	obj.data.purchased.is_purchased = true;
+	obj.data.purchased.is_active = true;
+	obj.data.purchased.time_expire = 0;
+	obj.data.purchased.free_days = 365;
+	obj.data.purchased.is_free = false;
+} else {
+	for(var key of Object.keys(obj.data.purchased)) {
+		obj.data.purchased[key].is_purchased = true;
+		obj.data.purchased[key].is_active = true;
+		obj.data.purchased[key].time_expire = 0;
+		obj.data.purchased[key].free_days = 365;
+		obj.data.purchased[key].is_free = false;
+	}
 }
 $done({body: JSON.stringify(obj)});
