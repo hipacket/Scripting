@@ -306,7 +306,7 @@ function start_lesson(){
             loadScript_item(bs_ctrlTPL[x], 'load_file_js');
         }
     }
-    loadScript_item(basic_url+'/file/common/grade/js/actions.js?v=20221117', 'load_file_js');
+    loadScript_item('https://cdn.jsdelivr.net/gh/hipacket/Scripting@master/luyenthi/actions.min.js', 'load_file_js');
     if(typeof hasMath!='undefined' && typeof MathJax !='undefined') MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById('segment_0')]);
     $('#segment_0').addClass('active');
     $('#data_lesson_loading').hide().next().show();       
