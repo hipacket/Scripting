@@ -692,7 +692,7 @@ function nextQuestion(){
        if($('#segment_'+lesson.inx).find('.basic_q_title .icon-audio'))$('#segment_'+lesson.inx).find('.basic_q_title .icon-audio').click();
     }
     showKeyoard();
-    if(false){
+    if(true){
         $('#number_ques .index').text((lesson.inx +1));	
         $('#box_result_index .active_ques').removeClass('active_ques').addClass('old').next().addClass('active_ques');			
         if(typeof hasMath!='undefined' && typeof MathJax !='undefined') MathJax.Hub.Queue(["Typeset", MathJax.Hub, document.getElementById('basic_segment_'+lesson.inx)]);
