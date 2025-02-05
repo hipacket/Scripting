@@ -36,4 +36,8 @@ if(obj.data.purchased && obj.data.purchased.is_purchased) {
 		obj.data.time_expire = Math.round(new Date()/1000) + 86400 * 365;
 	}
 }
+if(obj.data && obj.data.monkey_pro) {
+	obj.data.monkey_pro.active_monkey_pro = true;
+	obj.data.monkey_pro.lifetime = true;
+}
 $done({body: JSON.stringify(obj)});
