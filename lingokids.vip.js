@@ -45,6 +45,18 @@ if(obj && obj.feeds) {
     }
   }
 }
+if(obj && obj.entries) {
+  for(var feed of obj.entries) {
+    for(var entrie of feed.entries) {
+      if(entrie.overlay) {
+        if(entrie.overlay.blocking) 
+          delete entrie.overlay;
+        else 
+          entrie.overlay.blocking = false;
+      }
+    }
+  }
+}
 if(obj && obj.info) {
   obj.info.customer = true;
   if(obj.info.subscriptions) {
