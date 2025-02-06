@@ -1,4 +1,5 @@
-if($request.headers['If-None-Match']) {
-  delete $request.headers['If-None-Match'];
+var headers = $request.headers
+if(headers['If-None-Match']) {
+  delete headers['If-None-Match'];
 }
-$done({headers: headers});
+$done({headers});
