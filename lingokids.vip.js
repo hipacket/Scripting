@@ -61,18 +61,19 @@ if(obj && obj.info) {
   obj.info.customer = true;
   if(obj.info.subscriptions) {
     obj.info.subscriptions = [{
-      "id": 3369406,
-      "status": "active",
-      "in_grace_period": false,
-      "product": "unlimited",
-      "platform": "apple",
-      "starts_at": 1646452089,
-      "ends_at": 4099821292,
-      "plan_id": "s1m.t7d.p8.v1",
-      "duration_unit": "months",
-      "duration_value": 1,
-      "auto_renew_status": true
-    }];
+			"id": 3369406,
+			"status": "paid",
+			"state": "active",
+			"in_grace_period": false,
+			"product": "plus",
+			"platform": "apple",
+			"starts_at": 1646452089,
+			"ends_at": 4099821292,
+			"plan_id": "s1m.t7d.p8.v1",
+			"duration_unit": "months",
+			"duration_value": 1,
+			"auto_renew_status": true
+		}];
   }
   if(obj.info.children) {
     for(var c of obj.info.children) {
