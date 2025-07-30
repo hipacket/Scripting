@@ -36,11 +36,11 @@ try {
 if(obj && obj.feeds) {
   for(var feed of obj.feeds) {
     for(var entrie of feed.entries) {
-      if(entrie.overlay) {
-        if(entrie.overlay.blocking) 
-          delete entrie.overlay;
+      if(entrie.content && entrie.content.overlay) {
+        if(entrie.content.overlay.blocking) 
+          delete entrie.content.overlay;
         else 
-          entrie.overlay.blocking = false;
+          entrie.content.overlay.blocking = false;
       }
     }
   }
@@ -48,11 +48,11 @@ if(obj && obj.feeds) {
 if(obj && obj.entries) {
   for(var feed of obj.entries) {
     for(var entrie of feed.entries) {
-      if(entrie.overlay) {
-        if(entrie.overlay.blocking) 
-          delete entrie.overlay;
+      if(entrie.content && entrie.content.overlay) {
+        if(entrie.content.overlay.blocking) 
+          delete entrie.content.overlay;
         else 
-          entrie.overlay.blocking = false;
+          entrie.content.overlay.blocking = false;
       }
     }
   }
